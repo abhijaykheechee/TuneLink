@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "TuneLink",
+  "version": "1.0",
+  "author": "Abhijay K",
+  "description": "Get a YouTube link to your currently playing Spotify song!",
+  "permissions": ["tabs", "activeTab", "storage", "scripting"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "TuneLink"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://open.spotify.com/*"],
+      "js": ["content.js"]
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  }
+}
